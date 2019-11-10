@@ -25,8 +25,9 @@ namespace Site
                 options.AddPolicy("SpookyOrigin",
                 builder =>
                 {
-                    builder.WithOrigins("https://deepgrave.me",
-                                        "https://www.deepgrave.me");
+                    builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
                 });
             });
 

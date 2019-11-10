@@ -17,22 +17,14 @@ export class Home extends Component {
 
         this.setState({ imageData: process.env.PUBLIC_URL + "/running.jpg" });
 
-        fetch('https://deepgrave.me/api/upload', {
+        fetch('https://localhost:5001/api/upload', {
             method: 'POST',
             body: data,
         }).then((response) => {
             response.json().then((body) => {
-                this.setState({ imageData : body.data }); 
+                this.setState({ imageData: body.data });
             });
         });
-        //fetch('https://localhost:5001/api/upload', {
-        //    method: 'POST',
-        //    body: data,
-        //}).then((response) => {
-        //    response.json().then((body) => {
-        //        this.setState({ imageData: body.data });
-        //    });
-        //});
     }
 
     render() {
